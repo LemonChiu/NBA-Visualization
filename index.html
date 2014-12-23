@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Visualization of NBA 2014</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css"></link>
+    <link type="text/css" rel="stylesheet" href="css/radar-chart.css"></link>
+</head>
+<body>
+	<span class="date-text">NBA Data through September, 2014</span>
+	<form class="bar-form">
+		<label for="show-btn"><b>Stacked Bar Chart</b></label>
+		<input id="show-btn" type="button" value=" Show " onclick="createStackBar()" />
+		<input id="hide-btn" type="button" value=" Hide " onclick="hideStackBar()" />
+		<label class="bar-option" for="pts-weight"><b>PTS: </b></label>
+		<input class="bar-option" name="pts-weight" id="pts-weight" type="text" value="1" />
+		<label class="bar-option" for="ast-weight"><b>AST: </b></label>
+		<input class="bar-option" name="ast-weight" id="ast-weight" type="text" value="1" />
+		<label class="bar-option" for="reb-weight"><b>REB: </b></label>
+		<input class="bar-option" name="reb-weight" id="reb-weight" type="text" value="1" />
+		<label class="bar-option" for="tov-weight"><b>TOV: </b></label>
+		<input class="bar-option" name="tov-weight" id="tov-weight" type="text" value="1" />
+		<label class="bar-option" for="stl-weight"><b>STL: </b></label>
+		<input class="bar-option" name="stl-weight" id="stl-weight" type="text" value="1" />
+		<label class="bar-option" for="blk-weight"><b>BLK: </b></label>
+		<input class="bar-option" name="blk-weight" id="blk-weight" type="text" value="1" />
+		<label class="bar-option"><input class="bar-option" type="radio" name="mode" value="multiples" checked> Multiples</label>
+		<label class="bar-option"><input class="bar-option" type="radio" name="mode" value="stacked"> Stacked</label>
+	</form>
+	<script type="text/javascript" src="js/d3.min.js"></script>
+	<script type="text/javascript" src="js/radar-chart.js"></script>
+	<script type="text/javascript" src="js/d3.tip.v0.6.3.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

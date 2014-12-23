@@ -1,0 +1,60 @@
+state,value,EASTorWEST,city
+Ontario,1,East,Toronto
+DC,2,East,Washington
+Georgia,3,East,Atlanta Botanical
+Illinois,4,East,Chicago
+Ohio,5,East,Cleveland
+Wisconsin,6,East,Milwaukee
+Florida,7,East,Miami
+New York,8,East,Brooklyn
+Florida,9,East,Orlando
+Massachusetts,10,East,	Boston
+Indiana,11,East,Indiana
+North Carolina,12,East,Charlotte
+New York,13,East,New York
+Michigan,14,East,Detroit
+Pennsylvania,15,East,Philadelphia
+California,1,West,Oakland
+Tennessee,2,West,Memphis
+Texas,3,West,Houston
+Oregon,4,West,Portland
+Texas,5,West,San-Antonio
+California,6,West,Los Angeles
+Texas,7,West,Dallas
+Arizona,8,West,Phoenix
+California,9,West,Sacramento
+Louisiana,10,West,New Orleans
+Colorado,11,West,Denver
+Oklahoma,12,West,Oklahoma
+Utah,13,West,Salt Lake City
+California,14,West,Los Angeles
+Minnesota,15,West,Minneapolis
+Washington,NULL,West,NULL
+Idaho,NULL,West,NULL
+Montana,NULL,West,NULL
+North Dakota,NULL,West,NULL
+South Dakota,NULL,West,NULL
+Wyoming,NULL,West,NULL
+Nevada,NULL,West,NULL
+New Mexico,NULL,West,NULL
+Nebraska,NULL,West,NULL
+Kansas,NULL,West,NULL
+Iowa,NULL,West,NULL
+Missouri,NULL,West,NULL
+Arkansas,NULL,West,NULL
+Mississippi,NULL,West,NULL
+Alabama,NULL,East,NULL
+South Carolina,NULL,East,NULL
+Kentucky,NULL,East,NULL
+Virginia,NULL,East,NULL
+West Virginia,NULL,East,NULL
+Maryland,NULL,East,NULL
+Delaware,NULL,East,NULL
+New Jersey,NULL,East,NULL
+Connecticut,NULL,East,NULL
+Rhode Island,NULL,East,NULL
+Massachusetts,NULL,East,NULL
+New Hampshire,NULL,East,NULL
+Vermont,NULL,East,NULL
+Maine,NULL,East,NULL
+Washington DC,NULL,East,NULL

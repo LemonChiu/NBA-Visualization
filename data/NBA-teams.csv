@@ -1,0 +1,31 @@
+no,place,teamname,lat,lon,EASTorWEST,rank,abb,winrate
+1,Toronto,Raptors,44.391,-80.53,East,1,TOR,73.9
+2,DC,Wizards,38.93,-76.518999,East,2,WAS,72.7
+3,Atlanta Botanical city,Hawks,33.46,-84.25,East,3,ATL,72.7
+4,Chicago city,Bulls,41.51,-88.79,East,4,CHI,63.6
+5,Cleveland city,Cavaliers,40.640475,-82.582569,East,5,CLE,59.1
+6,Milwaukee city,Bucks,43.241809,-88.906837,East,6,MIL,47.8
+7,Miami city,Heat,26.4889689,-81.2264393,East,7,MIA,47.8
+8,Brooklyn,Nets,41.23,-74.71,East,8,BKN,42.9
+9,Orlando city,Magic,28.33,-81.2,East,9,ORL,36
+10,Boston city,Celtics,42.3584308,-71.0597732,East,10,BOS,33.3
+11,Indianapolis city (balance),Pacers,39.766911,-86.149963,East,11,IND,30.4
+12,Charlotte city,Horneys,36.09931,-80.817799,East,12,CHA,27.3
+13,New York city,Knicks,40.71455,-74.007124,East,13,NYK,20
+14,Detroit city,Pistons,42.408871,-85.002647,East,14,DET,17.4
+15,Philadelphia city,76ers,40.252335,-76.163789,East,15,PHI,9.1
+16,Golden State city,Warriors,37.47,-121.13,West,1,GSW,90.5
+17,Memphis city,Grizzlies,35.749681,-89.04892,West,2,MEM,81.8
+18,Houston city,Rocket,30.46,-95.23,West,3,HOU,77.3
+19,Portland city,TrailBlazers,44.52186,-122.882594,West,4,POR,73.9
+20,San Antonio city,Spurs,29.4241219,-98.4936282,West,7,SAS,69.6
+21,Los Angeles city,Clippers,34.55349,-117.245323,West,5,LAC,72.7
+22,Dallas city,Mavericks,32.7801399,-96.8004511,West,6,DAL,70.8
+23,Phoenix city,Suns,33.142,-112.0435,West,9,PHX,50
+24,Sacramento city,Kings,39.915291,-122.594651,West,10,SAC,47.8
+25,New Orleans,Pelicans,30.1,-91.2,West,8,NOP,50
+26,Denver city,Nuggets,39.737567,-104.9847179,West,11,DEN,45.5
+27,Oklahoma City,Thunder,35.29,-97.49,West,12,OKC,43.5
+28,Salt Lake City,Utah Jazz,40.47,-111.58,West,14,UTH,26.1
+29,Los Angeles city,Lakers,33.05349,-116.245323,West,13,LAL,30.4
+30,Minneapolis city,Timberwolves,43.979031,-94.264931,West,15,MIN,22.7
