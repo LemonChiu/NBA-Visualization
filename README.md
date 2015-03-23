@@ -1,4 +1,6 @@
 # Visualization of NBA 2014
+###[Online Demo](http://lemonchiu.github.io/NBA-Visualization/)
+
 <img src="https://raw.githubusercontent.com/LemonChiu/NBA-Visualization/master/screenshot/Overview.jpg" align="left" width="800">
 ### Package Description 
 It includes:
@@ -13,7 +15,7 @@ It includes:
 ### Data Sample 
 The NBA teams and players' data:
 
-+ Source: [2014-15 Reguluar Season Traditional Team Stats](http://stats.nba.com/league/team/#!/) and [2014-15 Reguluar Season Traditional Player Stats](http://stats.nba.com/league/player/#!/).
++ Source: [2014-15 Regular Season Traditional Team Stats](http://stats.nba.com/league/team/#!/) and [2014-15 Regular Season Traditional Player Stats](http://stats.nba.com/league/player/#!/).
 + The original data is grabbed from the web page and it is transformed to the CSV files.
 
 The U.S. geographic data:
