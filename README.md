@@ -32,3 +32,6 @@ The U.S. geographic data:
 + When more than one team is selected, a radar chart which compares the data mentioned above between the selected teams will be displayed. Exact values of all stats have a linear relationship with the team's relevant ranks. Additionally, Click again to reverse.
 + Click the "Show" button in the bottom to exhibit the bar chart of the whole league. Hover over a bar to obtain one data's name of a certain team.
 + The chart has multiples mode and stacked mode. What's more, weight of each item can be assigned and click the "Show" button again to create a new one.
+
+### License
+Licensed under The [MIT](https://github.com/LemonChiu/NBA-Visualization/blob/gh-pages/LICENSE) License
