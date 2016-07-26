@@ -2,7 +2,7 @@
 ###[Online Demo](http://lemonchiu.github.io/NBA-Visualization/)
 
 <img src="https://raw.githubusercontent.com/LemonChiu/NBA-Visualization/master/screenshot/Overview.jpg" align="left" width="800">
-### Package Description 
+### Package Description
 It includes:
 
 + index.html: The main html to embed D3 script.
@@ -12,7 +12,7 @@ It includes:
 + logo: SVG logos of 30 NBA teams.
 + screenshot: Screenshots for important features of the visualization.
 
-### Data Sample 
+### Data Sample
 The NBA teams and players' data:
 
 + Source: [2014-15 Regular Season Traditional Team Stats](http://stats.nba.com/league/team/#!/) and [2014-15 Regular Season Traditional Player Stats](http://stats.nba.com/league/player/#!/).
@@ -23,7 +23,7 @@ The U.S. geographic data:
 + Source: [USA.json](http://www.ourd3js.com/map/worldmap/America/USA.json)
 + The JSON file is then simplified by using [mapshaper](http://mapshaper.org/)
 
-### Methodology and Design 
+### Methodology and Design
 + The U.S.map is shown with two colors to distinguish the East and the West.
 + Each team is located at its home court and it's represented by a circle which the radius and opacity vary differently due to different winning rate. And both radius and opacity have a linear relationship with the winning rate.
 + Move over a circle, logo and exact winning rate of the represented team will appear.
