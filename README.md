@@ -34,4 +34,4 @@ The U.S. geographic data:
 + The chart has multiples mode and stacked mode. What's more, weight of each item can be assigned and click the "Show" button again to create a new one.
 
 ### License
-Licensed under The [MIT](https://github.com/LemonChiu/NBA-Visualization/blob/gh-pages/LICENSE) License
+Licensed under The [MIT](https://github.com/LemonChiu/NBA-Visualization/blob/master/LICENSE) License
