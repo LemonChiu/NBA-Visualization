@@ -2,7 +2,11 @@
 var w = 1024;
 var h = 768;
 
-//image width and height
+// Offset adjust for screen resolution
+var windowWidth = window.screen.availWidth;
+var tipOffset = [0, (windowWidth - w) / 2];
+
+//Image width and height
 var image_w = 200;
 var image_h = 200;
 
@@ -25,11 +29,11 @@ var zoom = d3.behavior.zoom()
 var path = d3.geo.path()
     .projection(projection);
 
-//Map the winrate to opacity[0.3, 0.9] 
+//Map the winrate to opacity[0.3, 0.9]
 var Opacity = d3.scale.linear()
     .range([0.2, 0.9]);
 
-//Map the rank to radius[2, 20] 
+//Map the rank to radius[2, 20]
 var Scale = d3.scale.linear()
     .range([2, 20]);
 
@@ -47,8 +51,8 @@ var g = svg.append("g")
 //Enable to zoom
 g.call(zoom.event);
 //Allow free zooming
-//g.call(zoom); 
-    
+//g.call(zoom);
+
 //Load in state data, draw the map
 d3.csv("data/US-states.csv", function(data) {
     //Load in GeoJSON data
@@ -100,13 +104,13 @@ d3.csv("data/US-states.csv", function(data) {
 
         //Load in NBA teams data
         d3.csv("data/NBA-teams.csv", function(data) {
-            //Map the rank to radius[2, 20] 
+            //Map the rank to radius[2, 20]
             Scale.domain([0, d3.max(data, function(d) { return d.winrate; })]);
 
-            //Map the rank to opacity[0.3, 0.9] 
+            //Map the rank to opacity[0.3, 0.9]
             Opacity.domain([0, d3.max(data, function(d) { return d.winrate; })]);
 
-            //Map the winrate to fontsize[10, 20] 
+            //Map the winrate to fontsize[10, 20]
             var FontSize = d3.scale.linear()
                 .domain([15, 1])
                 .range([10, 20]);
@@ -122,7 +126,7 @@ d3.csv("data/US-states.csv", function(data) {
                 .on("mouseover", nodeMouseover)
                 .on("mouseout", nodeMouseout);
 
-            
+
             //Circles for teams
             nodes.append("circle")
                 .attr("class", function(d) { return d.abb })
@@ -139,7 +143,7 @@ d3.csv("data/US-states.csv", function(data) {
                     return Opacity(d.winrate);})
                 .style("cursor", "pointer")
                 .on("click", teamClick);
-            
+
             //Text for temm abbreviation
             nodes.append("text")
                 .attr("class", function(d) {
@@ -161,7 +165,7 @@ d3.csv("data/US-states.csv", function(data) {
 //Craete the radar chart
 var radarChart = RadarChart.chart();
 //default config
-var defaultConfig = radarChart.config(); 
+var defaultConfig = radarChart.config();
 //defaultConfig.w and defaultConfig.h is 600
 radarChart.config({w: 300, h: 300, levels: 4, maxValue: 100});
 //TeamData for Rader chart
@@ -186,31 +190,31 @@ function regularizeRank(rank) {
 }
 
 //Judge if is in the array
-function contains(array, obj) { 
-    var i = array.length; 
-    while (i--) { 
-        if (array[i] === obj) { 
-            return true; 
-        } 
-    } 
-    return false; 
+function contains(array, obj) {
+    var i = array.length;
+    while (i--) {
+        if (array[i] === obj) {
+            return true;
+        }
+    }
+    return false;
 }
 
 //Get the index of the element in an array
 Array.prototype.indexOf = function(val) {
-    for (var i = 0; i < this.length; i++) {  
-        if (this[i] == val) return i;  
-    }  
-    return -1;  
-};  
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == val) return i;
+    }
+    return -1;
+};
 
 //Delete an element in an array
 Array.prototype.remove = function(val) {
-    var index = this.indexOf(val);  
-    if (index > -1) {  
-        this.splice(index, 1);  
+    var index = this.indexOf(val);
+    if (index > -1) {
+        this.splice(index, 1);
     }
-};  
+};
 
 //When click a Node
 function teamClick(d) {
@@ -240,7 +244,7 @@ function teamClick(d) {
         //Existing node number after deleting
         if (teamList.length == 0) {
             d3.selectAll(".pie-chart").remove();
-        } 
+        }
         if (teamList.length == 1) {
             createPieChart();
             d3.selectAll(".teamRadar").remove();
@@ -275,7 +279,7 @@ function teamClick(d) {
 
     //Push team data for radar chart
     function pushTeamRadarData(teamData){
-        for (var i = 0; i < teamData.length; i++) { 
+        for (var i = 0; i < teamData.length; i++) {
             if (teamData[i].team == selectedTeamName) { //Grab the team
                 var teamAxes = [];
                 teamAxes.push({axis: "Points", value: regularizeRank(teamData[i].rPTS)});
@@ -318,14 +322,14 @@ function teamClick(d) {
                 //Save the selected team data
                 if (d.team == teamList[teamList.length - 1]) {
                     teamPlayer.push({
-                        player: d.player, 
+                        player: d.player,
                         team: d.team,
-                        PTS: d.PTS, 
-                        PIE: d.PIE, 
-                        REB: d.REB, 
-                        AST: d.AST, 
-                        STL: d.STL, 
-                        BLK: d.BLK, 
+                        PTS: d.PTS,
+                        PIE: d.PIE,
+                        REB: d.REB,
+                        AST: d.AST,
+                        STL: d.STL,
+                        BLK: d.BLK,
                         TOV: d.TOV
                     });
                     teamPlayerName.push(d.player);
@@ -333,8 +337,8 @@ function teamClick(d) {
             });
 
             //For full percentage of the pie chart
-            var maxPlayerPTS = d3.max(playerData, function(d) { return d.PTS; }); 
-            var maxPlayerAST = d3.max(playerData, function(d) { return d.AST; });   
+            var maxPlayerPTS = d3.max(playerData, function(d) { return d.PTS; });
+            var maxPlayerAST = d3.max(playerData, function(d) { return d.AST; });
             var maxPlayerREB = d3.max(playerData, function(d) { return d.REB; });
             var maxPlayerBLK = d3.max(playerData, function(d) { return d.BLK; });
             var maxPlayerSTL = d3.max(playerData, function(d) { return d.STL; });
@@ -342,7 +346,7 @@ function teamClick(d) {
 
             var tip = d3.tip()
                 .attr("class", "d3-tip pie-chart-tip")
-                .offset([0, -128])
+                .offset([-4, -tipOffset[1]])
                 .html(function(d) { return "<span>" + d.data.player + "</span>"; });;
 
             var outlineArc = d3.svg.arc()
@@ -366,7 +370,7 @@ function teamClick(d) {
                     .append("g");
 
                 //position of the pie charts
-                pieChart.attr("class", "single-pie-chart").attr("transform", function() { 
+                pieChart.attr("class", "single-pie-chart").attr("transform", function() {
                     if (i <= 2){
                         return "translate(" + 770 + "," + (110 + i * 160) +")" ;
                     } else {
@@ -382,29 +386,29 @@ function teamClick(d) {
                     .text(function() { return shortAttrName[i]; })
                     .append("title")
                     .text(function() { return fullAttrName[i] })
-                    .call(tip); 
+                    .call(tip);
 
-                if (i == 0) { 
+                if (i == 0) {
                     pie.value(function(d) { return d.PTS; });
                     arc.outerRadius(function (d) { return (radius - innerRadius) * d.data.PTS / maxPlayerPTS + innerRadius; });
                 }
-                if (i == 1) { 
+                if (i == 1) {
                     pie.value(function(d) { return d.AST; });
                     arc.outerRadius(function (d) { return (radius - innerRadius) * d.data.AST / maxPlayerAST + innerRadius; });
                 }
-                if (i == 2) { 
-                    pie.value(function(d) { return d.REB; }); 
+                if (i == 2) {
+                    pie.value(function(d) { return d.REB; });
                     arc.outerRadius(function (d) { return (radius - innerRadius) * d.data.REB / maxPlayerREB + innerRadius; });
                 }
-                if (i == 3) { 
-                    pie.value(function(d) { return d.BLK; }); 
+                if (i == 3) {
+                    pie.value(function(d) { return d.BLK; });
                     arc.outerRadius(function (d) { return (radius - innerRadius) * d.data.BLK / maxPlayerBLK + innerRadius; })
                 }
                 if (i == 4) {
-                    pie.value(function(d) { return d.STL; }); 
+                    pie.value(function(d) { return d.STL; });
                     arc.outerRadius(function (d) { return (radius - innerRadius) * d.data.STL / maxPlayerSTL + innerRadius; })
                 }
-                if (i == 5) { 
+                if (i == 5) {
                     pie.value(function(d) { return d.TOV; });
                     arc.outerRadius(function (d) { return (radius - innerRadius) * d.data.TOV / maxPlayerTOV + innerRadius; });
                 }
@@ -432,10 +436,10 @@ function teamClick(d) {
                     .attr("fill", "none")
                     .attr("stroke", "gray")
                     .attr("class", "outlineArc")
-                    .attr("d", outlineArc);  
+                    .attr("d", outlineArc);
             }
         });
-        
+
         //Return the map of Players' data
         function playerDataset(teamPlayer) {
             return teamPlayer.map(function(d) {
@@ -445,9 +449,9 @@ function teamClick(d) {
                     PTS: d.PTS,
                     PIE: d.PIE,
                     REB: d.REB,
-                    AST: d.AST, 
-                    STL: d.STL, 
-                    BLK: d.BLK, 
+                    AST: d.AST,
+                    STL: d.STL,
+                    BLK: d.BLK,
                     TOV: d.TOV
                 };
             });
@@ -469,7 +473,7 @@ function renderRadarChart() {
 function renderLengend(teamList) {
     var colorscale = d3.scale.category10();
 
-    //Initiate Legend   
+    //Initiate Legend
     var legend = svg.select(".teamRadar").selectAll("g.legend-tag").data(teamList).enter()
         .append("g")
         .attr("class", "legend-tag")
@@ -494,7 +498,7 @@ function renderLengend(teamList) {
         .attr("y", function(d, i){ return i * 20 + 9;})
         .attr("font-size", "10px")
         .attr("fill", "#737373")
-        .text(function(d) { return d; }); 
+        .text(function(d) { return d; });
 }
 
 //Click button to show
@@ -575,10 +579,10 @@ function createStackBar() {
         barY0.domain(dataByGroup.map(function(d) { return d.key; }));
         barY1.domain([0, d3.max(barData, function(d) { return d.value; })]).range([barY0.rangeBand(), 0]);
 
-        //Create the tooltips of a team's data 
+        //Create the tooltips of a team's data
         var tip = d3.tip()
             .attr('class', 'd3-tip')
-            .offset([-10, -128])
+            .offset([-6, -tipOffset[1]])
             .html(function(d) {
                 return "<strong>"+ d.groupname +"</strong> of <strong><span style='color:red'>" + d.team + "</span></strong>";
             })
@@ -638,7 +642,7 @@ function createStackBar() {
             var g = t.selectAll(".bar-group").attr("transform", function(d) { return "translate(0," + barY0(d.key) + ")"; });
             g.selectAll("rect").attr("y", function(d) { return barY1(d.value); });
             g.select(".group-label").attr("y", function(d) { return barY1(d.values[0].value / 2); })
-            //Hide the pie chart 
+            //Hide the pie chart
             svg.selectAll(".pie-chart").style("display","none");
         }
 
@@ -690,7 +694,7 @@ function stateClick(d) {
 
     //Hide the radar chart, stack bar chart, pie chart
     d3.selectAll(".bar-form")
-        .style("display", "none");  
+        .style("display", "none");
     svg.selectAll(".teamRadar")
         .style("display", "none");
     svg.selectAll(".stack-bar")
@@ -698,7 +702,7 @@ function stateClick(d) {
     svg.selectAll(".pie-chart")
         .style("display", "none");
 
-    //Modify the size 
+    //Modify the size
     var bounds = path.bounds(d),
         dx = bounds[1][0] - bounds[0][0],
         dy = bounds[1][1] - bounds[0][1],
@@ -759,7 +763,7 @@ function nodeMouseover(d){
     d3.select(this).select("circle")
         .transition()
         .duration(200)
-        .attr("r", function(d){ 
+        .attr("r", function(d){
             return 1.5 * Scale(d.winrate); })
         .style("opacity", 1)
         .style("stroke-width", "2px");
@@ -789,7 +793,7 @@ function nodeMouseout(d){
     d3.select(this).select("circle")
         .transition()
         .duration(200)
-        .attr("r", function(d) { 
+        .attr("r", function(d) {
             return Scale(d.winrate); })
         .style("opacity", function(d){
             return Opacity(d.winrate);})
