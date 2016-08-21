@@ -1,7 +1,9 @@
 # Visualization of NBA 2014
+
 ###[Online Demo](http://lemonchiu.github.io/NBA-Visualization/)
 
-<img src="https://raw.githubusercontent.com/LemonChiu/NBA-Visualization/master/screenshot/Overview.jpg" align="left" width="800">
+![Screenshot Overview](https://raw.githubusercontent.com/LemonChiu/NBA-Visualization/master/screenshot/Overview.jpg)
+
 ### Package Description
 It includes:
 
